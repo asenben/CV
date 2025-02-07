@@ -25,3 +25,23 @@ html, body {
     height: 100%;
     object-fit: cover;
 }
+
+.background-video .conatiner {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    z-index: 1;
+}
+
+.background-video .conatiner .profile .profile-iamge {
+    width: 100%;
+}
+
+.background-video .conatiner .profile .profile-iamge img {
+    max-width: 300px;
+    max-height: 300px;
+    border-radius: 50%;
+}
