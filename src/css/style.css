@@ -170,6 +170,7 @@ html, body {
 @media (max-width: 768px) {
     .background-video .container .profile h1 {
         font-size: 28px;
+        margin: 5px;
     }
 
     .profile-description {
@@ -180,6 +181,7 @@ html, body {
         padding: 10px 20px;
         font-size: 16px;
         width: 200px;
+        margin: 5px;
     }
 
     .background-video .container .profile .profile-image img {
@@ -194,6 +196,7 @@ html, body {
         min-height: 100vh;
         justify-content: flex-start;
         max-width: 100%;
+        padding: 0;
     }
 
     .profile h1 {
