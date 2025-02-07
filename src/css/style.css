@@ -28,14 +28,13 @@ html, body {
     object-fit: cover;
 }
 
-/* Добавяне на overlay (засенчване върху видеото) */
 .background-video .overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5); /* Полупрозрачен черен слой */
+    background: rgba(0, 0, 0, 0.5);
     z-index: 1;
 }
 
@@ -46,24 +45,11 @@ html, body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    z-index: 1;
     text-align: center;
-    animation: fadeIn 1.5s ease-in-out;
-    z-index: 1;
+    z-index: 2;
 }
 
-/* Анимация за плавно появяване */
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(-20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-.background-video .profile .profile-image {
-    text-align: center;
-    width: 100%;
-}
-
-.background-video .profile .profile-image img {
+.background-video .container .profile .profile-image img {
     max-width: 150px;
     max-height: 150px;
     border-radius: 50%;
@@ -71,25 +57,36 @@ html, body {
     box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.3);
 }
 
-.background-video .profile h1 {
+.background-video .container .profile h1 {
     font-size: 42px;
     color: #ffffff;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin: 20px 0;
     text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
 }
 
-.background-video .links ul {
+.profile-description {
+    font-size: 22px;
+    font-weight: 500;
+    color: #ffffff;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
+    margin-top: 10px;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 1.5s ease-in-out, transform 1.5s ease-in-out;
+    text-align: center;
+}
+
+.background-video .container .links ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
 }
 
-.background-video .links ul li {
+.background-video .container .links ul li {
     text-align: center;
 }
 
-.background-video .links ul li a {
+.background-video .container .links ul li a {
     display: inline-block;
     font-weight: bold;
     text-decoration: none;
@@ -100,7 +97,7 @@ html, body {
     border-radius: 50px;
     width: 250px;
     text-align: center;
-    background: linear-gradient(45deg, #00c6ff, #0072ff); /* Ярък син градиент */
+    background: linear-gradient(45deg, #00c6ff, #0072ff);
     box-shadow: 0px 4px 15px rgba(0, 198, 255, 0.6);
     transition: all 0.3s ease-in-out;
     position: relative;
@@ -108,8 +105,36 @@ html, body {
     border: 2px solid rgba(255, 255, 255, 0.5);
 }
 
-/* Вълнообразен ефект при hover */
-.background-video .links ul li a::before {
+.fade-in {
+    opacity: 0;
+    transform: scale(0.8);
+    transition: opacity 1.5s ease-in-out, transform 1.5s ease-in-out;
+}
+
+.visible {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.hover-effect {
+    transform: rotate(5deg) scale(1.1);
+    box-shadow: 0px 0px 25px rgba(0, 198, 255, 0.9);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.hover-effect-title {
+    transform: scale(1.1);
+    text-shadow: 0px 0px 15px rgba(0, 198, 255, 0.8);
+    transition: transform 0.3s ease-in-out, text-shadow 0.3s ease-in-out;
+}
+
+.pulse-effect {
+    transform: scale(1.05);
+    box-shadow: 0px 6px 20px rgba(0, 198, 255, 0.8);
+    transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+}
+
+.background-video .container .links ul li a::before {
     content: "";
     position: absolute;
     top: 50%;
@@ -123,20 +148,17 @@ html, body {
     opacity: 0;
 }
 
-/* Активиране на ефекта при hover */
-.background-video .links ul li a:hover::before {
+.background-video .container .links ul li a:hover::before {
     transform: translate(-50%, -50%) scale(1);
     opacity: 1;
 }
 
-/* Допълнителен ефект при hover */
-.background-video .links ul li a:hover {
+.background-video .container .links ul li a:hover {
     transform: scale(1.1);
     box-shadow: 0px 8px 20px rgba(0, 198, 255, 0.8);
 }
 
-/* Анимация при натискане */
-.background-video .links ul li a:active {
+.background-video .container .links ul li a:active {
     transform: scale(0.95);
     box-shadow: 0px 3px 10px rgba(0, 198, 255, 0.8);
 }
