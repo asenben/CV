@@ -193,7 +193,7 @@ html, body {
         height: auto;
         min-height: 100vh;
         justify-content: flex-start;
-        padding-top: 15vh;
+        max-width: 100%;
     }
 
     .profile h1 {
@@ -201,17 +201,17 @@ html, body {
     }
 
     .profile-description {
-        font-size: 14px;
+        font-size: 12px;
     }
 
     .profile-image img {
-        max-width: 80px;
-        max-height: 80px;
+        max-width: 70px;
+        max-height: 70px;
     }
 
     .links ul li a {
-        padding: 8px 16px;
-        font-size: 12px;
-        width: 160px;
+        padding: 5px 12px;
+        font-size: 10px;
+        width: 140px;
     }
 }
