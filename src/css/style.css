@@ -93,19 +93,50 @@ html, body {
     display: inline-block;
     font-weight: bold;
     text-decoration: none;
-    background-color: rgba(255, 255, 255, 0.8);
     padding: 15px 30px;
     margin: 10px;
-    color: #0084ff;
+    color: white;
+    font-size: 18px;
     border-radius: 50px;
     width: 250px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    background: linear-gradient(45deg, #00c6ff, #0072ff); /* Ярък син градиент */
+    box-shadow: 0px 4px 15px rgba(0, 198, 255, 0.6);
     transition: all 0.3s ease-in-out;
+    position: relative;
+    overflow: hidden;
+    border: 2px solid rgba(255, 255, 255, 0.5);
 }
 
-/* Ефект при hover */
+/* Вълнообразен ефект при hover */
+.background-video .links ul li a::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: rgba(255, 255, 255, 0.3);
+    transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
+    transform: translate(-50%, -50%) scale(0);
+    border-radius: 50%;
+    opacity: 0;
+}
+
+/* Активиране на ефекта при hover */
+.background-video .links ul li a:hover::before {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+}
+
+/* Допълнителен ефект при hover */
 .background-video .links ul li a:hover {
-    background-color: #0084ff;
-    color: white;
-    transform: scale(1.05);
+    transform: scale(1.1);
+    box-shadow: 0px 8px 20px rgba(0, 198, 255, 0.8);
+}
+
+/* Анимация при натискане */
+.background-video .links ul li a:active {
+    transform: scale(0.95);
+    box-shadow: 0px 3px 10px rgba(0, 198, 255, 0.8);
 }
