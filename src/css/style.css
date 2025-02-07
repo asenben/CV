@@ -1,5 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
 html, body {
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
     overflow: hidden;
@@ -26,7 +28,18 @@ html, body {
     object-fit: cover;
 }
 
-.background-video .conatiner {
+/* Добавяне на overlay (засенчване върху видеото) */
+.background-video .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Полупрозрачен черен слой */
+    z-index: 1;
+}
+
+.background-video .container {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -34,19 +47,65 @@ html, body {
     align-items: center;
     height: 100vh;
     z-index: 1;
+    text-align: center;
+    animation: fadeIn 1.5s ease-in-out;
+    z-index: 1;
 }
 
-.background-video .conatiner .profile .profile-image {
+/* Анимация за плавно появяване */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.background-video .profile .profile-image {
     text-align: center;
     width: 100%;
 }
 
-.background-video .conatiner .profile .profile-image img {
-    max-width: 200px;
-    max-height: 200px;
+.background-video .profile .profile-image img {
+    max-width: 150px;
+    max-height: 150px;
     border-radius: 50%;
+    border: 3px solid white;
+    box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.3);
 }
 
-.background-video .conatiner .profile h1 {
+.background-video .profile h1 {
+    font-size: 42px;
     color: #ffffff;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.background-video .links ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.background-video .links ul li {
+    text-align: center;
+}
+
+.background-video .links ul li a {
+    display: inline-block;
+    font-weight: bold;
+    text-decoration: none;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 15px 30px;
+    margin: 10px;
+    color: #0084ff;
+    border-radius: 50px;
+    width: 250px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease-in-out;
+}
+
+/* Ефект при hover */
+.background-video .links ul li a:hover {
+    background-color: #0084ff;
+    color: white;
+    transform: scale(1.05);
 }
